@@ -1,0 +1,26 @@
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Crawl-delay for polite crawling
+Crawl-delay: 0
+
+# Specific bot permissions
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+# Sitemap location
+Sitemap: https://breakmywebsite.com/sitemap.xml
+
+# Host preference (optional)
+Host: https://breakmywebsite.com
+
