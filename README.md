@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🛠️ BreakMyWebsite: The Interactive System Design Simulator
 
-## Getting Started
+[![Website](https://img.shields.io/badge/Live-Demo-brightgreen)](https://breakmywebsite.com)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-First, run the development server:
+**BreakMyWebsite** is a hands-on educational platform designed to teach **System Design**, **Chaos Engineering**, and **Site Reliability Engineering (SRE)** by doing the unthinkable: intentionally breaking real systems.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Most tutorials tell you how to build; we show you why systems fail so you can build them better.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🚀 Key Features
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+* **Real-Time Simulation:** Interact with live, working web systems and trigger known limitations to see how they behave under stress.
+* **Chaos Lab:** Use specialized tools to inject latency, crash databases, and trigger CPU spikes.
+* **The Black Friday Room:** Experience the pressure of scaling for millions of users in a high-stakes shopping holiday simulation.
+* **The Hacker Room:** Defend against SQL Injections, DDoS attacks, and malware in a gamified security environment.
+* **Core Concepts visualized:** Deep dives into Caching, Concurrency, Rate Limiting, and Load Balancing.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🛠️ Built With
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+* **Frontend:** [React.js](https://reactjs.org/) & [Tailwind CSS](https://tailwindcss.com/)
+* **Logic:** Custom JavaScript-based Chaos Engines
+* **Platform:** Developed with [Lovable](https://lovable.dev)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🎯 Why Use BreakMyWebsite?
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Interview Prep:** Perfect for software engineers preparing for System Design interviews at FAANG and top-tier tech companies.
+- **SRE Training:** A safe "sandbox" for junior engineers to learn incident response without breaking a real production environment.
+- **Architecture Review:** Understand the "Single Point of Failure" and how to implement "Self-Healing" mechanisms.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 🌐 SEO & Meta Keywords
+`System Design`, `Chaos Engineering`, `SRE Interview Prep`, `Distributed Systems`, `Backend Development`, `Scaling Web Apps`, `Fault Tolerance`, `Load Balancing`, `Reliability Engineering`.
+
+---
+
+## 🤝 Contributing
+
+We love feedback! 
+- Found a bug? Open an **Issue**.
+- Have a new "Room" idea? Submit a **Pull Request**.
+- Want feedback on your own system design? Post in our **Discussions** tab.
+
+## 📄 License
+Distributed under the MIT License. See `LICENSE` for more information.
+
+---
+**[Start Breaking Systems Now →](https://breakmywebsite.com)**
