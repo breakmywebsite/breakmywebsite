@@ -86,11 +86,18 @@ export default function RootLayout({
 }>) {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "WebSite",
+    "@type": "SoftwareApplication", // Changed from WebSite to SoftwareApplication
     "name": "Break My Website",
-    "description": "Master system design concepts through interactive visualizations and real-world examples",
+    "description": "Master system design and chaos engineering through interactive simulations. Inject latency, crash databases, and learn to build resilient architecture.",
     "url": siteUrl,
+    "applicationCategory": "EducationalApplication", // Tells Google it's an educational tool
+    "operatingSystem": "Web",
     "inLanguage": "en-US",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
     "publisher": {
       "@type": "Organization",
       "name": "Break My Website",
@@ -103,14 +110,6 @@ export default function RootLayout({
         "https://twitter.com/breakmywebsite",
         "https://github.com/breakmywebsite",
       ],
-    },
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": {
-        "@type": "EntryPoint",
-        "urlTemplate": `${siteUrl}/search?q={search_term_string}`,
-      },
-      "query-input": "required name=search_term_string",
     },
   };
 
