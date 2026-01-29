@@ -23,6 +23,8 @@ export const metadata: Metadata = {
     "software architecture",
     "distributed systems",
     "auto scaling",
+    "chaos engineering",
+    "SRE interview prep",
     "fault tolerance",
     "circuit breaker",
     "caching strategies",
