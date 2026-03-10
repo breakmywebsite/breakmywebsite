@@ -7,7 +7,7 @@ const Hero = () => {
       {/* Background Effects */}
       <div className="absolute inset-0 grid-pattern opacity-30" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-primary/5 blur-3xl" />
-      
+
       {/* Floating Elements */}
       <div className="absolute top-32 left-[15%] animate-float opacity-20">
         <div className="w-20 h-20 rounded-lg border border-primary/30 bg-primary/5 backdrop-blur" />
@@ -29,6 +29,7 @@ const Hero = () => {
 
           {/* Main Headline */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 animate-fade-in" style={{ animationDelay: '0.1s' }}>
+            <span className="sr-only">Break My Website - Interactive System Design Simulator. </span>
             Systems Fail.
             <br />
             <span className="gradient-text">Learn Why.</span>
@@ -36,7 +37,7 @@ const Hero = () => {
 
           {/* Subheadline */}
           <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            Explore live systems with intentional limitations. Understand how they behave, fail, and scale. 
+            Explore live systems with intentional limitations. Understand how they behave, fail, and scale.
             Master system design through hands-on exploration.
           </p>
 

@@ -125,6 +125,11 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `if (navigator.userAgent.includes('Googlebot')) document.documentElement.classList.add('is-bot')`,
+          }}
+        />
       </head>
       <body className="antialiased">
         {children}

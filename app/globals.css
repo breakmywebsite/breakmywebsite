@@ -78,6 +78,13 @@
   code, pre, .font-mono {
     font-family: var(--font-mono);
   }
+
+  .is-bot *, .is-bot ::before, .is-bot ::after {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }
 
 @layer components {

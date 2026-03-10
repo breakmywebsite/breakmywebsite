@@ -3,10 +3,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
-  ArrowLeft,
-  Link as LinkIcon,
   Copy,
   Check,
   AlertTriangle,
@@ -18,9 +15,7 @@ import {
   Shield,
   Crown
 } from "lucide-react";
-import Link from "next/link";
 import UrlAnalytics from "@/components/demo/UrlAnalytics";
-import RateLimitIndicator from "@/components/demo/RateLimitIndicator";
 import UrlSystemDesignCards, {
   basicUrlDesign,
   advancedUrlDesign,
@@ -31,6 +26,7 @@ import {
   UnifiedMetricsDashboard,
   UnifiedLoadSimulator
 } from "@/components/visualization";
+import VersionTabs, { type Version } from "@/components/shared/VersionTabs";
 import { z } from "zod";
 
 const urlSchema = z.string().url({ message: "Please enter a valid URL" }).max(2048, { message: "URL too long" });
@@ -57,7 +53,7 @@ const generateShortCode = (): string => {
 };
 
 export default function UrlShortenerClient() {
-  const [activeVersion, setActiveVersion] = useState("basic");
+  const [activeVersion, setActiveVersion] = useState<Version>("basic");
   const [url, setUrl] = useState("");
   const [error, setError] = useState("");
   const [shortenedUrls, setShortenedUrls] = useState<ShortenedUrl[]>([]);
@@ -315,88 +311,72 @@ export default function UrlShortenerClient() {
           </p>
         </div>
 
-        <Tabs value={activeVersion} onValueChange={setActiveVersion} className="w-full">
-          <TabsList className="grid w-full max-w-2xl mx-auto grid-cols-3 h-auto p-1">
-            <TabsTrigger
-              value="basic"
-              className="flex flex-col gap-1 py-3 data-[state=active]:bg-destructive/20 data-[state=active]:text-destructive"
-            >
-              <Zap className="h-5 w-5" />
-              <span className="font-semibold">Basic</span>
-              <span className="text-xs opacity-70">Direct to DB</span>
-            </TabsTrigger>
-            <TabsTrigger
-              value="advanced"
-              className="flex flex-col gap-1 py-3 data-[state=active]:bg-warning/20 data-[state=active]:text-warning"
-            >
-              <Shield className="h-5 w-5" />
-              <span className="font-semibold">Advanced</span>
-              <span className="text-xs opacity-70">With Cache</span>
-            </TabsTrigger>
-            <TabsTrigger
-              value="legendary"
-              className="flex flex-col gap-1 py-3 data-[state=active]:bg-primary/20 data-[state=active]:text-primary"
-            >
-              <Crown className="h-5 w-5" />
-              <span className="font-semibold">Legendary</span>
-              <span className="text-xs opacity-70">Distributed</span>
-            </TabsTrigger>
-          </TabsList>
-
-          <TabsContent value="basic" className="mt-8 space-y-8">
-            <div className="flex items-center gap-4 p-4 rounded-lg bg-destructive/10 border border-destructive/20">
-              <AlertTriangle className="h-8 w-8 text-destructive" />
-              <div>
-                <h3 className="font-bold text-lg text-destructive">Basic Implementation</h3>
-                <p className="text-sm text-muted-foreground">
-                  Direct database access for every request - simple but doesn&apos;t scale
-                </p>
+        <VersionTabs
+          value={activeVersion}
+          onValueChange={setActiveVersion}
+          versionConfig={{
+            basic: { label: "Basic", subtitle: "Direct to DB" },
+            advanced: { label: "Advanced", subtitle: "With Cache" },
+            legendary: { label: "Legendary", subtitle: "Distributed" },
+          }}
+          basicContent={
+            <div className="space-y-8">
+              <div className="flex items-center gap-4 p-4 rounded-lg bg-destructive/10 border border-destructive/20">
+                <AlertTriangle className="h-8 w-8 text-destructive" />
+                <div>
+                  <h3 className="font-bold text-lg text-destructive">Basic Implementation</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Direct database access for every request - simple but doesn&apos;t scale
+                  </p>
+                </div>
               </div>
-            </div>
-            <UrlSystemDesignCards {...basicUrlDesign} />
-            <div className="grid lg:grid-cols-2 gap-6">
-              <UnifiedFlowAnimation version="basic" systemType="url" />
-              <UnifiedLoadSimulator version="basic" systemType="url" />
-            </div>
-            <UnifiedMetricsDashboard version="basic" systemType="url" />
-          </TabsContent>
-
-          <TabsContent value="advanced" className="mt-8 space-y-8">
-            <div className="flex items-center gap-4 p-4 rounded-lg bg-warning/10 border border-warning/20">
-              <Shield className="h-8 w-8 text-warning" />
-              <div>
-                <h3 className="font-bold text-lg text-warning">Advanced Implementation</h3>
-                <p className="text-sm text-muted-foreground">
-                  Redis caching for hot URLs - faster but cache invalidation is tricky
-                </p>
+              <UrlSystemDesignCards {...basicUrlDesign} />
+              <div className="grid lg:grid-cols-2 gap-6">
+                <UnifiedFlowAnimation version="basic" systemType="url" />
+                <UnifiedLoadSimulator version="basic" systemType="url" />
               </div>
+              <UnifiedMetricsDashboard version="basic" systemType="url" />
             </div>
-            <UrlSystemDesignCards {...advancedUrlDesign} />
-            <div className="grid lg:grid-cols-2 gap-6">
-              <UnifiedFlowAnimation version="advanced" systemType="url" />
-              <UnifiedLoadSimulator version="advanced" systemType="url" />
-            </div>
-            <UnifiedMetricsDashboard version="advanced" systemType="url" />
-          </TabsContent>
-
-          <TabsContent value="legendary" className="mt-8 space-y-8">
-            <div className="flex items-center gap-4 p-4 rounded-lg bg-primary/10 border border-primary/20">
-              <Crown className="h-8 w-8 text-primary" />
-              <div>
-                <h3 className="font-bold text-lg text-primary">Legendary Implementation</h3>
-                <p className="text-sm text-muted-foreground">
-                  Globally distributed with edge caching - production-ready at any scale
-                </p>
+          }
+          advancedContent={
+            <div className="space-y-8">
+              <div className="flex items-center gap-4 p-4 rounded-lg bg-warning/10 border border-warning/20">
+                <Shield className="h-8 w-8 text-warning" />
+                <div>
+                  <h3 className="font-bold text-lg text-warning">Advanced Implementation</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Redis caching for hot URLs - faster but cache invalidation is tricky
+                  </p>
+                </div>
               </div>
+              <UrlSystemDesignCards {...advancedUrlDesign} />
+              <div className="grid lg:grid-cols-2 gap-6">
+                <UnifiedFlowAnimation version="advanced" systemType="url" />
+                <UnifiedLoadSimulator version="advanced" systemType="url" />
+              </div>
+              <UnifiedMetricsDashboard version="advanced" systemType="url" />
             </div>
-            <UrlSystemDesignCards {...legendaryUrlDesign} />
-            <div className="grid lg:grid-cols-2 gap-6">
-              <UnifiedFlowAnimation version="legendary" systemType="url" />
-              <UnifiedLoadSimulator version="legendary" systemType="url" />
+          }
+          legendaryContent={
+            <div className="space-y-8">
+              <div className="flex items-center gap-4 p-4 rounded-lg bg-primary/10 border border-primary/20">
+                <Crown className="h-8 w-8 text-primary" />
+                <div>
+                  <h3 className="font-bold text-lg text-primary">Legendary Implementation</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Globally distributed with edge caching - production-ready at any scale
+                  </p>
+                </div>
+              </div>
+              <UrlSystemDesignCards {...legendaryUrlDesign} />
+              <div className="grid lg:grid-cols-2 gap-6">
+                <UnifiedFlowAnimation version="legendary" systemType="url" />
+                <UnifiedLoadSimulator version="legendary" systemType="url" />
+              </div>
+              <UnifiedMetricsDashboard version="legendary" systemType="url" />
             </div>
-            <UnifiedMetricsDashboard version="legendary" systemType="url" />
-          </TabsContent>
-        </Tabs>
+          }
+        />
       </section>
 
       {/* Analytics Section */}

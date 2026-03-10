@@ -10,7 +10,7 @@ import Footer from "@/components/Footer";
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://breakmywebsite.com";
 
 export const metadata: Metadata = {
-  title: "Home - Learn System Design Interactively",
+  title: "Break My Website - Learn System Design Interactively",
   description: "Master system design concepts with interactive visualizations. Explore auto-scaling, fault tolerance, circuit breakers, caching strategies, notification systems, URL shorteners, and more.",
   openGraph: {
     type: "website",
