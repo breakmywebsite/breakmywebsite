@@ -85,6 +85,14 @@
     opacity: 1 !important;
     transform: none !important;
   }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-fade-in {
+      animation: none !important;
+      opacity: 1 !important;
+      transform: none !important;
+    }
+  }
 }
 
 @layer components {
@@ -155,3 +163,4 @@
 .animate-pulse-glow {
   animation: pulse-glow 2s ease-in-out infinite;
 }
+

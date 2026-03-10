@@ -127,7 +127,7 @@ export default function RootLayout({
         />
         <script
           dangerouslySetInnerHTML={{
-            __html: `if (navigator.userAgent.includes('Googlebot')) document.documentElement.classList.add('is-bot')`,
+            __html: `(function(){var ua=navigator.userAgent;if(/Googlebot|bingbot|Baiduspider|YandexBot|DuckDuckBot|Slurp|facebookexternalhit|Twitterbot|LinkedInBot|WhatsApp|Applebot|AhrefsBot|SemrushBot|bot|crawl|spider/i.test(ua))document.documentElement.classList.add('is-bot');})()`,
           }}
         />
       </head>

@@ -22,13 +22,13 @@ const Hero = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/20 bg-primary/5 mb-8 animate-fade-in">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/20 bg-primary/5 mb-8">
             <Zap className="h-4 w-4 text-primary" />
             <span className="text-sm font-medium text-primary">Learn System Design by Breaking Things</span>
           </div>
 
           {/* Main Headline */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 animate-fade-in" style={{ animationDelay: '0.1s' }}>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6">
             <span className="sr-only">Break My Website - Interactive System Design Simulator. </span>
             Systems Fail.
             <br />
@@ -36,13 +36,13 @@ const Hero = () => {
           </h1>
 
           {/* Subheadline */}
-          <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
             Explore live systems with intentional limitations. Understand how they behave, fail, and scale.
             Master system design through hands-on exploration.
           </p>
 
           {/* Terminal Preview */}
-          <div className="glass-card rounded-xl p-4 max-w-xl mx-auto mb-10 animate-fade-in" style={{ animationDelay: '0.3s' }}>
+          <div className="glass-card rounded-xl p-4 max-w-xl mx-auto mb-10">
             <div className="flex items-center gap-2 mb-3">
               <div className="w-3 h-3 rounded-full bg-destructive/80" />
               <div className="w-3 h-3 rounded-full bg-warning/80" />
@@ -64,7 +64,7 @@ const Hero = () => {
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in" style={{ animationDelay: '0.4s' }}>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button variant="hero" size="xl" className="group">
               Explore Systems
               <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
@@ -75,7 +75,7 @@ const Hero = () => {
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-3 gap-8 max-w-md mx-auto mt-16 animate-fade-in" style={{ animationDelay: '0.5s' }}>
+          <div className="grid grid-cols-3 gap-8 max-w-md mx-auto mt-16">
             <div>
               <p className="text-3xl font-bold gradient-text">12+</p>
               <p className="text-sm text-muted-foreground">Live Systems</p>
