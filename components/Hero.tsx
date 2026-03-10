@@ -3,7 +3,7 @@ import { ArrowRight, Zap, AlertTriangle } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
+    <section className="relative py-24 flex items-center justify-center overflow-hidden pt-24">
       {/* Background Effects */}
       <div className="absolute inset-0 grid-pattern opacity-30" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-primary/5 blur-3xl" />
