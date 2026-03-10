@@ -4,7 +4,7 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://breakmywebsite.com'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const currentDate = new Date()
-  
+
   return [
     {
       url: siteUrl,
